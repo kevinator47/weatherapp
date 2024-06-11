@@ -9,6 +9,19 @@ export type Places = {
     coord: Coordinates;
 };
 
+export type PlaceResponse = {
+    cod: string;
+    count : number;
+    list: Places[];
+    message: string;
+};
+
+export type ForecastItem = {
+    time: string;
+    icon: string;
+    temp: number;
+};
+
 export type ForecastMain = {
     feels_like: number;
     grnd_level: number;
@@ -36,4 +49,9 @@ export type Forecast = {
     dt_txt: string;
     main: ForecastMain;
     weather: ForecastWeather[]
+};
+
+export type ForecastResponse = {
+    cod: string;
+    list: Forecast[];   
 };

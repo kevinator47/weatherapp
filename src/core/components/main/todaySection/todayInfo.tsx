@@ -1,14 +1,12 @@
-import { Forecast } from "../../../types/weather"
+import useWeatherContext from "../../../store/weather/hook";
 import ForecastList from "../globals/forecast/ForecastList";
 import WeatherTemperatureInfo from "../globals/weather/WeatherTemperatureInfo";
 import LocationDate from "./LocationDate";
 
-type Props = {
-    forecast : Forecast[];
-    todayForecast : Forecast | null;
-};
 
-const TodaySection : React.FC<Props> = ({forecast, todayForecast}) => {
+
+export default function TodayInfo(){
+  const {state : {forecast,todayForecast}} = useWeatherContext();
   return(
     <section>
       {todayForecast && <LocationDate dt={todayForecast.dt} />}
@@ -24,4 +22,3 @@ const TodaySection : React.FC<Props> = ({forecast, todayForecast}) => {
     </section>
   );
 };
-export default TodaySection;
