@@ -3,7 +3,6 @@ export function GetDayOfWeek(dt : number) {
     const date = new Date(dt * 1000);
     return days[date.getDay()];
   };
-  
   export function GetFullDate(dt : number) {
     const date = new Date(dt * 1000);
     const day = date.getDate().toString().padStart(2, '0');
@@ -11,7 +10,6 @@ export function GetDayOfWeek(dt : number) {
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
   };
-
   export function getTime(dt: number) {
     const date = new Date(dt * 1000);
     return date.getUTCHours();
