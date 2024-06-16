@@ -17,8 +17,8 @@ export function GetDayOfWeek(dt : number) {
     return date.getUTCHours();
   };
 
-  export function getTimeWithMinutes(dt:number) {
-    const date = new Date(dt * 1000);
+  export function getTimeWithMinutes(dt:number, timezoneShift:number) {
+    const date = new Date((dt + timezoneShift) * 1000);
     return date.getUTCHours() + " : " + date.getUTCMinutes();
   }
   
