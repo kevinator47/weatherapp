@@ -1,13 +1,15 @@
-import { Forecast, Places } from "../../types/weather";
+import { Forecast, City, CurrentWeatherData } from "../../types/weather";
 
 export type WeatherState = {
-    place: Places | null;
+    place: City | null;
     forecast: Forecast[];
-    todayForecast: Forecast | null;
+    todayForecast : Forecast | null;
+    currentWeather : CurrentWeatherData | null;
   };
   
   export const initialState: WeatherState = {
     place: null,
     forecast: [],
     todayForecast: null,
+    currentWeather : null,
   };

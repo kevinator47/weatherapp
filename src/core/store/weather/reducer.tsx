@@ -12,6 +12,8 @@ const reducer = (state: WeatherState, action: TAction): WeatherState => {
         forecast: action.payload,
         todayForecast: action.payload.length > 0 ? action.payload[0] : null,
       };
+    case "SET_CURRENT":
+      return{...state, currentWeather: action.payload}
     default:
       return state;
   }
